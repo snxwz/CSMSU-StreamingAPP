@@ -86,24 +86,24 @@ class _UploadState extends State<UploadPage> {
     if (videoPath == null) {
       return;
     }
-
-    final url = Uri.parse('http://116.204.180.51:8900/upload/hls/$token');  // Replace with your API URL
+    final url = Uri.parse('http://116.204.180.51:8900/upload/hls/$token');
     final request = http.MultipartRequest('POST', url);
-
     request.files.add(await http.MultipartFile.fromPath('video', videoPath));
-
     try {
       final response = await request.send();
       if (response.statusCode == 200) {
-        // Video uploaded successfully, handle the response as needed.
-        print('Video uploaded successfully');
-      } else {
-        // Handle the error or display an error message.
-        print('Video upload failed with status code: ${response.statusCode}');
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Video uploaded successfully'),
+          ),
+        );
       }
     } catch (e) {
-      // Handle any exceptions that may occur during the upload.
-      print('Error uploading video: $e');
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Video upload fail!'),
+        ),
+      );
     }
   }
 
