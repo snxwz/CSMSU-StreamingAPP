@@ -11,7 +11,7 @@ class PlayerPage extends StatefulWidget {
 
 class _PlayerState extends State<PlayerPage> {
   final videoPlayerController = VideoPlayerController.network(
-      'http://116.204.180.51:8900/get/hls/UreApSxCrZld/VpU9SZ6wmfdt');
+      'http://116.204.180.51:8900/get/hls/rqfz9k7y2M67/EhG2Lxvyfk7Q.m3u8'); //Video API Link
   late ChewieController chewieController;
 
   @override
@@ -30,7 +30,7 @@ class _PlayerState extends State<PlayerPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text("Sample App"),
+          title: const Text("HLS Player"),
         ),
         body: Chewie(controller: chewieController));
   }

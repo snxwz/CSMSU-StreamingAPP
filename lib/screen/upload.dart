@@ -4,7 +4,6 @@ import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:toast/toast.dart';
 
 class UploadPage extends StatefulWidget {
   const UploadPage({Key? key}) : super(key: key);
@@ -55,10 +54,6 @@ class _UploadState extends State<UploadPage> {
         child: const Icon(Icons.upload_file),
       ),
     );
-  }
-
-  void showToast(String msg, {int? duration, int? gravity}) {
-    Toast.show(msg, duration: duration, gravity: gravity);
   }
 
   void _pickVideo() async {
@@ -139,7 +134,6 @@ class _UploadState extends State<UploadPage> {
             ElevatedButton(
               onPressed: () {
                 _uploadVideo(_videoUrl);
-                showToast("Video uploaded fail!", duration: Toast.lengthLong, gravity:  Toast.bottom);
               },
               child: const Text('Upload'),
             ),
