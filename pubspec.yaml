@@ -36,17 +36,13 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   http: ^1.1.0
-  fluttertoast: ^8.2.2
   shared_preferences: ^2.2.2
   file_picker: ^6.0.0
-  video_player: ^2.7.2
   file: ^7.0.0
   image_picker: ^1.0.4
-  toast: ^0.3.0
+  video_player: ^2.3.10
   chewie: ^1.7.1
-  video_player_platform_interface: ^6.2.1
-  flutter_hls_parser: ^2.0.1
-  lecle_yoyo_player: ^0.0.8
+
   
 
 dev_dependencies:
